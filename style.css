@@ -20,7 +20,7 @@
     width:100px;
 }
 .logo{
-    background-image: url(".Shinabo.jpg");
+    background-image: url("Shinabo.jpg");
     background-size:cover;
     background-color: #0f1111;
     height:50px;
