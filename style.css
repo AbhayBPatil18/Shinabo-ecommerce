@@ -20,7 +20,7 @@
     width:100px;
 }
 .logo{
-    background-image: url("./Shinabo.jpg");
+    background-image: url(".Shinabo.jpg");
     background-size:cover;
     background-color: #0f1111;
     height:50px;
@@ -156,7 +156,7 @@ span{
 }
 /* Hero Section */
 .hero-section{
-    background-image: url("/Hero.png");
+    background-image: url("Hero.png");
     background-size:cover;
     height: 200px;;
 }
@@ -234,7 +234,7 @@ ul{
     align-items: center;
 }
 .logo{
-    background-image: url("/Shinabo.jpg");
+    background-image: url("Shinabo.jpg");
     background-size: cover;
     background-color: #0f1111;
     height:50px;
