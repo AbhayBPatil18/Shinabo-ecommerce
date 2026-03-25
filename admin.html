@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - Shinabo</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+<body>
+
+<header class="dashboard-header admin">
+    <h2>Welcome Admin</h2>
+    <button onclick="logout()">Logout</button>
+</header>
+
+<section class="dashboard-content">
+    <h3>Admin Controls</h3>
+    <ul>
+        <li>Add / Remove Products</li>
+        <li>Manage Users</li>
+        <li>Update Offers</li>
+        <li>View Orders</li>
+    </ul>
+</section>
+
+<script>
+function logout() {
+    window.location.href = "login_page.html";
+}
+</script>
+
+</body>
+</html>

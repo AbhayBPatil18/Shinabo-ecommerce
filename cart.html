@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shinabo Cart</title>>
+</head>
+<style>
+    body {
+    font-family: Arial;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+button {
+    padding: 6px 12px;
+    background: #ffd814;
+    border: none;
+    cursor: pointer;
+}
+
+</style>
+<body>
+
+<h2>🛒 Your Cart</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody id="cart-items"></tbody>
+</table>
+
+<h3 id="grand-total"></h3>
+
+<button onclick="clearCart()">Clear Cart</button>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let table = document.getElementById("cart-items");
+let grandTotal = 0;
+
+cart.forEach((item, index) => {
+    let itemTotal = item.price * item.qty;
+    grandTotal += itemTotal;
+
+    table.innerHTML += `
+        <tr>
+            <td>${item.name}</td>
+            <td>₹${item.price}</td>
+            <td>${item.qty}</td>
+            <td>₹${itemTotal}</td>
+            <td>
+                <button onclick="removeItem(${index})">Remove</button>
+            </td>
+        </tr>
+    `;
+});
+
+document.getElementById("total").innerText =
+    "Grand Total: ₹" + grandTotal;
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload();
+}
+</script>
+
+</body>
+</html>
